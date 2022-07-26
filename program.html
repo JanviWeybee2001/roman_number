@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Enter number:
+    <input type="text" class="txt">
+    <input type="submit" onclick="intToRoman()">
+    <h1 class="answer"></h1>
+
+    <script>
+        const val = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1]
+        const rom = ["M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"]
+
+        var intToRoman = function () {
+            debugger;
+            N = document.querySelector('.txt').value;
+            let ans = "";
+            for (let i = 0; N; i++){
+                while (N >= val[i]) ans += rom[i], N -= val[i]
+            }
+        
+            document.querySelector('.answer').innerHTML = ans;
+        };
+    </script>
+</body>
+
+</html>
+
+<!-- if (num >= 1 && num < 5) {
+    nearest = (num - 1) <= 2 ? 1 : 5;
+}
+else if (num >= 5 && num < 10) {
+    nearest = (num - 5) <= 2 ? 5 : 10;
+}
+else  {
+    nearest = num % 10;
+}
+if (nearest < 0) {
+    answer = romanArray.get(nearest) + answer;
+}
+else {
+    answer += romanArray.get(nearest);
+} -->
+
+
+<!-- 
+if (num >= 1000) {
+    nearest = 1000;
+}
+else if (num >= 1 && num < 5) {
+    nearest = (num - 1) <= 2 ? 1 : 5;
+}
+else if (num >= 5 && num < 10) {
+    nearest = (num - 5) <= 2 ? 5 : 10;
+}
+else if (num >= 10 && num < 50) {
+    nearest = (num - 10) >=40 ? 50 : 10;
+}
+else if (num >= 50 && num < 100) {
+    nearest = (num - 50) >=90 ? 100 : 50;
+}
+else if (num >= 100 && num < 500) {
+    nearest = (num - 100) >=450 ? 100 : 50;
+}
+else if (num >= 500 && num < 1000) {
+    nearest = (num - 500) >=900 ? 1000 : 500;
+}
+else {
+    nearest = 0;
+}
+if (nearest > num) {
+    answer = romanArray.get(nearest) + answer;
+    num = nearest - num ;
+}
+else {
+    answer += romanArray.get(nearest);
+    num = num - nearest;
+} -->
